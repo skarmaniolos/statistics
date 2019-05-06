@@ -14,10 +14,20 @@ kc_tax_subset <- subset(kc_tax, TaxAssessedValue < 750000 & SqFtTotLiving > 100 
 nrow(kc_tax_subset)
 head(kc_tax_subset)
 
-# plot data
+# overall data visualisation
 ggplot(kc_tax_subset, (aes(x = SqFtTotLiving, y = TaxAssessedValue / 1000))) +
   stat_binhex(colour = "white") +
   theme_minimal() + 
   scale_fill_gradient(low = "white", high = "purple") +
   labs(x = "Finished Square Feet", y = "Tax Assessed Value (thousands)") +
   guides(fill=guide_legend(title="Frequency"))
+
+# visualising multiple variables by zipcode
+ggplot(subset(kc_tax_subset, ZipCode %in% c(98188, 98105, 98108, 98126)),
+       aes(x = SqFtTotLiving, y = TaxAssessedValue / 1000)) +
+  stat_binhex(colour = "white") +
+  theme_minimal() + 
+  scale_fill_gradient(low = "white", high = "purple") +
+  labs(x = "Finished Square Feet", y = "Tax Assessed Value (thousands)") +
+  facet_wrap("ZipCode")
+  guides(fill = guide_legend(title="Frequency"))
