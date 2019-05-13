@@ -1,4 +1,4 @@
-# measuring correlation between different etfs
+# measuring price change correlation between different etfs 
 
 
 # using corrplot
