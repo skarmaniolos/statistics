@@ -1,4 +1,5 @@
-# measuring correlation between sq foot v tax assessed value for homes in Kings County.
+# measuring correlation between sq foot v tax assessed value for homes in Kings County
+# script includes two different plots using ggplot
 
 # using corrplot
 library(ggplot2)
