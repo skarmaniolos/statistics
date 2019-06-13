@@ -1,4 +1,4 @@
-# Assorted Statistical Programming Collection. 
+# Assorted Statistical Modelling Collection
 ###### A collection of various models, scripts and programs with a focus on practical statistics.
 
 ## Contents:
