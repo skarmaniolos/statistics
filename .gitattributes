@@ -1,2 +1,2 @@
-* linguist-vendored
+statistical-modelling/code/notebooks/* linguist-vendored
 *.R linguist-vendored=false
