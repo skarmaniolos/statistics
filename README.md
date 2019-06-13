@@ -10,3 +10,4 @@ Python
 - Random Visualisations
 - Extracting Data from Relational Databases
 - Linear Algebra
+- Predicting Customer Churn
