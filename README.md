@@ -5,6 +5,7 @@
 R
 - Correlation betwen various ETF funds
 - Hexagonal Binning the relationship between tax-assessed home values versus finished square feet
+
 Python
 - Random Visualisations
 - Extracting Data from Relational Databases
