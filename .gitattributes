@@ -1,2 +1,1 @@
-statistical-modelling/code/notebooks/* linguist-vendored
-*.R linguist-vendored=false
+*.ipynb linguist-language=Java
