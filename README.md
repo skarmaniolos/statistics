@@ -5,6 +5,7 @@
 R
 - Correlation betwen various ETF funds
 - Hexagonal Binning the relationship between tax-assessed home values versus finished square feet
+- Analysing local league football standings
 
 Python
 - Random Visualisations
