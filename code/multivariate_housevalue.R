@@ -6,7 +6,7 @@ library(ggplot2)
 library(hexbin)
 
 # load data
-kc_tax <- read.csv(paste(getwd(), "/statistics/data/raw/kc_tax.csv", sep=""))
+kc_tax <- read.csv(paste(getwd(), "/data/kc_tax.csv", sep=""))
 
 # conditional subsetting
 kc_tax_subset <- subset(kc_tax, TaxAssessedValue < 750000 & SqFtTotLiving > 100 & SqFtTotLiving < 3500)
