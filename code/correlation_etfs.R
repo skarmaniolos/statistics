@@ -1,10 +1,8 @@
-# measuring price change correlation between different etfs 
-
+# measuring and visualising price change correlation between different ETFs
 
 # using corrplot
 library(corrplot)
 library(RColorBrewer)
-
 
 # load data
 sp500_px <- read.csv(paste(getwd(), "/statistics/data/raw/sp500_data.csv", sep=""))
@@ -13,10 +11,8 @@ sp500_sym <- read.csv(paste(getwd(), "/statistics/data/raw/sp500_sectors.csv", s
 etfs <- sp500_px[row.names(sp500_px)>"2012-07-01",
                  sp500_sym[sp500_sym$sector=="etf", 'symbol']]
 
-
 # set colour values
 col <- colorRampPalette(c("#BB4444", "#EE9988", "#FFFFFF", "#77AADD", "#4477AA"))
-
 
 # computes p-value of correlations
 cor.mtest <- function(mat) {
@@ -34,10 +30,8 @@ cor.mtest <- function(mat) {
   p.mat
 }
 
-
 p.mat <- cor.mtest(etfs)
 head(p.mat[,1:5])
-
 
 # plot results
 corrplot(cor(etfs), method = "color", col=col(200),
