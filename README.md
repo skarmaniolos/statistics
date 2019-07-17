@@ -1,4 +1,4 @@
-# Statistical Modeling
+# Collection
 This project is a central collection of loosely related miscellaneous scripts, files, models and plots. 
 
 #### -- Project Status: [Active]
