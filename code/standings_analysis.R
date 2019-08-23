@@ -50,7 +50,8 @@ text(data_subset_3$scored, data_subset_3$against, labels=data_subset_3$short_nam
 
 ppg_plot <- barplot((data$points/data$played),  # points / games played
                         main="Points Per Game",
-                        xlab="",las=2, 
+                        xlab="",
+                        las=2, 
                         ylab="",
                         col=topo.colors(40),
                         space=0.1,

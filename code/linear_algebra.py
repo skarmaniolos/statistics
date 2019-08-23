@@ -13,7 +13,7 @@ height_weight_age = [70, 170, 40]
 # dataset containing student exam scores for four courses is 4D vector
 grades = [95, 80, 75, 62]
 
-# Sum, Subtraction, Addition, Multiplication
+# sum, subtraction, addition, multiplication
 def vector_add(v, w):
     # adds corresponding elements
     return [v_i + w_i
@@ -73,7 +73,7 @@ def shape(A):
 
 print('Size of A: ', shape(A), '\n'
       'Size of B: ', shape(B))
-	  
+	 
 def get_row(A, i):
     return A[i]
 
@@ -81,7 +81,7 @@ def get_row(A, i):
 def get_col(A, j):
     return [A_i[j] for A_i in A]
 	
-# Making a matrix function
+# making a matrix function
 def make_matrix(num_rows, num_cols, entry_fn):
     # returns num_rows x num_cols matrix whose (i,j) is entry_fn(i,j)
     return[[entry_fn(i,j)               # given i, create list
