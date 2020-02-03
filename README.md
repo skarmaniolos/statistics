@@ -25,7 +25,7 @@ This project is a central collection of loosely related miscellaneous scripts, f
 
 | Name    | Handle   		  | 
 |---------|-------------------|
-|[Steven K](https://github.com/skarmaniolos)| @skarmaniolos        |
+|[Steven K](https://github.com/dietofworms)| @dietofworms        |
 
 ## Contact
-* Feel free to contact me on Twitter: [@skarmaniolos](https://twitter.com/skarmaniolos) for any questions!
+* Feel free to contact me on Twitter: [@cuttingheads](https://twitter.com/cuttingheads) for any questions!
