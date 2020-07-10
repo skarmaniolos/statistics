@@ -59,7 +59,7 @@ def generate_standings(df: pd.DataFrame()) -> pd.DataFrame():
     return table
 
 
-def generate_plot(data: pd.DataFrame()) -> int:
+def generate_plot(data: pd.DataFrame()):
     df = data.groupby(['date','game_id','player', 'position']).sum() \
              .groupby(level=2).cumsum().reset_index()
     df = df.sort_values(by=['date','game_id','position']).reset_index()
