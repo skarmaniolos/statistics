@@ -1,21 +1,7 @@
 # Code Collection
-This project is a central collection of loosely related miscellaneous scripts, files, models and plots. 
-
-#### -- Project Status: [Active]
-
-### Methods
-* Exploratory Statistical Analysis
-* Predictive Modeling
-* Data Visualisation
-* Data Munging/Processing
-
-### Tools
-* R
-* Python
-* Pandas, jupyter
-* Matplotlib
-* ggplot2
+## Overview
+This project is a central collection of unrelated shell scripts, data analysis, models, utilities, and plots. In this potpourri repository, there are R scripts, Python programs, Jupyter notebooks, shell scripts, and more.
 
 ## Featured Files
-* [ETF Correlation](https://github.com/dietofworms/code-collection/blob/master/code/mathematics/correlation_etfs.R)
+* [Bloodborne Boss Difficulty](https://github.com/dietofworms/code-collection/blob/master/code/bloodborne/BloodbornePlayerStats.ipynb)
 * [Predicting Customer Churn](https://github.com/dietofworms/code-collection/blob/master/code/customer_churn/Predicting%20Customer%20Churn.ipynb)

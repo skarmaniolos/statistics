@@ -64,7 +64,17 @@ def generate_plot(data: pd.DataFrame()):
              .groupby(level=2).cumsum().reset_index()
     df = df.sort_values(by=['date','game_id','position']).reset_index()
     df = df[['date', 'game_id', 'player', 'position', 'points']]
-    
+        
+    plt.rcParams["figure.figsize"] = (26, 22)
+
+    # setting font family
+    plt.rcParams['font.family'] = 'Jetbrains Mono'
+
+    # plt.rcParams['lines.linewidth'] = 20
+    # plt.rcParams['lines.markersize'] = 1
+
+    # setting plot context
+    sns.set_context("poster")
     # defining the lineplot dataset and axis 
     ax = sns.lineplot(x="date", y="points", hue="player", data=df,dashes = True)
 
