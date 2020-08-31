@@ -100,7 +100,7 @@ def generate_histograms(data: pd.DataFrame()):
     # create new dataframe for this analysis
     filter_mask = data[data.played>0]
 
-    plt.rcParams["figure.figsize"] = (12,10)
+    plt.rcParams["figure.figsize"] = (25, 30)
 
     # create list of players
     players = list(set(data['player']))
@@ -118,14 +118,26 @@ def generate_histograms(data: pd.DataFrame()):
     for player in players:
         score_dict[player] = Counter(filter_mask[filter_mask['player']==player]['position'].values.tolist())
 
-    for player in players:
-        plt.figure()
-        plt.bar(score_dict[player].keys(), score_dict[player].values())
-        plt.xticks(range(1,7))
+    # for player in players:
+    #     plt.figure()
+    #     plt.bar(score_dict[player].keys(), score_dict[player].values())
+    #     plt.xticks(range(1,7))
+    #     plt.xlabel('position')
+    #     plt.ylabel('frequency')
+    #     plt.title('%s place distribution' % player)
+    #     plt.savefig('plots/%s-hist.png' % player)
+
+    plt.figure()
+    for i in range(len(players)):
+        ax = plt.subplot(3, 2, i+1)
+        plt.bar(score_dict[players[i]].keys(), score_dict[players[i]].values())
+        plt.xticks(range(1, 7))
         plt.xlabel('position')
         plt.ylabel('frequency')
-        plt.title('%s place distribution' % player)
-        plt.savefig('plots/%s-hist.png' % player)
+        plt.title('%s place distribution' % players[i])
+
+    plt.savefig('plots/standings-hist.png')
+    plt.show()
 
 
 if __name__ == "__main__":
