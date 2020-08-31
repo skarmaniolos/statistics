@@ -6,6 +6,8 @@ from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 from pandas.plotting import register_matplotlib_converters as converter
 import seaborn as sns; sns.set()
+import plotly.graph_objects as go
+from collections import Counter
 
 
 def process_dataframe(df: pd.DataFrame()) -> pd.DataFrame():
@@ -91,10 +93,42 @@ def generate_plot(data: pd.DataFrame()):
     ax.legend(loc='upper right', bbox_to_anchor=(1.14, 1.007), ncol=1)
     
     # save to file
-    plt.savefig('./standings_over_time.png')
-    
+    plt.savefig('plots/StandingsOverTime-line.png')
 
-def main():
+
+def generate_histograms(data: pd.DataFrame()):
+    # create new dataframe for this analysis
+    filter_mask = data[data.played>0]
+
+    plt.rcParams["figure.figsize"] = (12,10)
+
+    # create list of players
+    players = list(set(data['player']))
+
+    # initialise empty list of scores for each player
+    scores_steve, scores_mellick, scores_antoni, scores_robbo, scores_sam, scores_lowes = ([] for i in range(0, len(players))) 
+
+    # create list of lists of all scores
+    scores = [scores_steve, scores_mellick, scores_antoni, scores_robbo, scores_sam, scores_lowes]
+
+    # zip the list and player names together for iteration
+    score_dict = dict(zip(players, [0,0,0,0,0,0]))
+
+    # iterate through the zipped list and assign the list of values to each list
+    for player in players:
+        score_dict[player] = Counter(filter_mask[filter_mask['player']==player]['position'].values.tolist())
+
+    for player in players:
+        plt.figure()
+        plt.bar(score_dict[player].keys(), score_dict[player].values())
+        plt.xticks(range(1,7))
+        plt.xlabel('position')
+        plt.ylabel('frequency')
+        plt.title('%s place distribution' % player)
+        plt.savefig('plots/%s-hist.png' % player)
+
+
+if __name__ == "__main__":
     # load data into data frame
     path = os.getcwd() + "/dataset.csv"
     raw_df = pd.read_csv(path)
@@ -103,9 +137,6 @@ def main():
     df = process_dataframe(raw_df)
     print(generate_standings(df))
     
-    # save plot file to directory
+    # save plot files to directory
     generate_plot(df)
-    
-
-if __name__ == "__main__":
-    main()
+    generate_histograms(df)
